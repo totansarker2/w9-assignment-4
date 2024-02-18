@@ -1,11 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font-raleway -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- daisyui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'black-1': 'rgba(3, 7, 18, 1)',
+                        'black-2': 'rgba(3, 7, 18, 0.8)',
+                        'black-3': 'rgba(3, 7, 18, 0.6)',
+                        'black-4': 'rgba(3, 7, 18, 0.5)',
+                        'black-5': 'rgba(3, 7, 18, 0.4)',
+                        'white': '#000000',
+
+                        'white-1': 'rgba(255, 255, 255, 1)',
+                        'white-2': 'rgba(255, 255, 255, 0.8)',
+                        'white-3': 'rgba(255, 255, 255, 0.7)',
+
+                    }
+                }
+            }
+        }
+    </script>
     <title>Document</title>
 </head>
+<style>
+    body {
+        font-family: "Raleway", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+    }
+
+    body>* {
+        width: 80%;
+        margin: 0 auto;
+        border-radius: 32px;
+        overflow: hidden;
+    }
+</style>
+
 <body>
-    
+    <nav class="rounded-none">
+        <div class="navbar bg-base-100 px-0">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a>Item 1</a></li>
+                        <li>
+                            <a>Parent</a>
+                        </li>
+                        <li><a>Item 3</a></li>
+                    </ul>
+                </div>
+                <a class="text-4xl px-0 font-extrabold">P-Ticket</a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1 font-medium text-lg">
+                    <li><a>Home</a></li>
+                    <li><a>About</a></li>
+                    <li><a>Destination</a></li>
+                    <li><a>Search</a></li>
+                </ul>
+            </div>
+            <div class="navbar-end">
+                <a class="btn btn-outline btn-success bg-[#1DD1001A]">
+                    <span class="font-bold text-xl">Bus</span>
+                    <img src="./images/bus-icon.png" alt="">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- banner section start -->
+    <section class="banner">
+        <div class="hero h-[30rem]" style="background-image: url(./images/banner.png);">
+            <div class="hero-overlay bg-opacity-20"></div>
+            <div class="hero-content text-center text-neutral-content">
+                <div class="max-w-md">
+                    <h1 class="mb-5 text-5xl font-bold">End-to-End Travel with <span class="">P Paribahan</span></h1>
+                    <p class="mb-5 text-white">Yes, you can run unit tests and view the results directly within the
+                        app.
+                        The
+                        integrated testing features allow for a streamlined .</p>
+                    <button class="btn btn-primary">Buy Tickets</button>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
+
 </html>
