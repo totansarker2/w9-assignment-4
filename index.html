@@ -27,6 +27,7 @@
                         'white-1': 'rgba(255, 255, 255, 1)',
                         'white-2': 'rgba(255, 255, 255, 0.8)',
                         'white-3': 'rgba(255, 255, 255, 0.7)',
+                        'gray-1': 'rgb(247, 248, 248)',
 
                         'green-1': 'rgba(29, 209, 0, 1)',
                         'green-2': 'rgba(36, 255, 3, 1)',
@@ -48,9 +49,7 @@
         }
     </script>
     <style>
-        .d {
-            color: rgb(36, 255, 3);
-        }
+
     </style>
     <title>Document</title>
 </head>
@@ -119,7 +118,8 @@
                 <div class="text-white flex flex-col justify-center items-center">
                     <h1 class="mb-5 text-6xl font-bold">End-to-End Travel with <span class="text-green-1 block">P
                             Paribahan</span></h1>
-                    <p class="mb-5 text-white w-[70%] text-lg font-normal">Yes, you can run unit tests and view the
+                    <p class="mb-5 text-white w-[70%] font-inter text-lg font-normal">Yes, you can run unit tests and
+                        view the
                         results directly within the
                         app.
                         The
@@ -133,7 +133,7 @@
     </section>
 
     <!-- best offer section start -->
-    <section class="best-offer flex flex-col items-center gap-6">
+    <section class="best-offer flex flex-col items-center gap-7">
         <h2 class="font-bold text-4.5xl">Best offers for you</h2>
         <div class="w-full grid grid-flow-col gap-6">
             <div class="flex justify-evenly bg-yellow-1 rounded-3xl">
@@ -166,6 +166,102 @@
             class="btn btn-outline border-green-1 text-green-1 font-bold text-xl hover:bg-green-2 hover:text-black-2">See
             All Offers</button>
     </section>
+
+    <!-- P.H Paribahan section start -->
+    <section class="w-full PH-Paribahan bg-gray-1">
+        <div class="w-[80%] mx-auto flex flex-col items-center gap-7">
+            <h2 class="font-bold text-4.5xl">P.H Paribahan</h2>
+            <p class="font-inter text-lg text-black-3 w-[80%] text-center">Yes, you can run unit tests and view the
+                results directly
+                within the app. The integrated testing features allow for a streamlined .</p>
+
+            <div class="flex w-full bg-white">
+                <div class="paribahan w-[65%] flex justify-between">
+                    <div class="logo flex h-fit">
+                        <img src="./images/bus-logo.png" alt="">
+                        <div>
+                            <h3 class="font-bold text-3.5xl">Greenline Paribahan</h3>
+                            <span class="font-inter text-lg text-black-3">Coach-009-WEB ! AC_Business</span>
+                        </div>
+                    </div>
+                    <div class="seat flex h-fit">
+                        <img src="./images/seat-green.png" alt="">
+                        <span>40</span> Seats left
+                    </div>
+                </div>
+                <img class="h-full" src="./images/info-devider.png" alt="">
+                <div>
+                    <img src="./images/fare.png" alt="">
+                    550 Taka
+                    <span>Per Seat</span>
+                </div>
+            </div>
+            <div class="w-full bg-white flex justify-between">
+                <div class="select-seat w-[55%] font-inter flex flex-col gap-8">
+                    <h4 class="font-raleway">Select Your Seat </h4>
+                    <div class="w-full flex justify-between">
+                        <div class="flex h-fit">
+                            <img src="./images/seat-gray.png" alt="">
+                            <span>Available</span>
+                        </div>
+                        <div class="flex h-fit">
+                            <img src="./images/seat-green-filled.png" alt="">
+                            <span>Selected</span>
+                        </div>
+                    </div>
+
+                    <div id="all-seat" class="flex text-center w-full gap-[0%]">
+                        <div id="seat-index" class="grid grid-cols-1 gap-6 flex-grow">
+                            <div class="h-16">
+                            </div>
+                        </div>
+                        <div id="left-seats" class="w-[45%] grid grid-cols-2 gap-6 pr-[3vw]">
+                            <div class="h-16"></div>
+                            <div class="h-16"></div>
+                        </div>
+                        <div id="right-seats" class="w-[45%] grid grid-cols-2 gap-6 pl-[3vw]">
+                            <div class="h-16"></div>
+                            <div class="bg-gray-200 h-16 rounded-xl flex justify-center items-center">
+                                <img class="h-fit" src="./images/vector.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="details flex flex-col flex-grow font-inter bg-gray-1 m-8 p-8 gap-4"> -->
+                    <h4 class="font-raleway">Select Your Seat </h4>
+                    <div class="buy flex flex-col gap-4">
+                        <div class="grid grid-cols-3 place-items-center ">
+                            <span>Seat</span><span>Class</span><span>Price</span>
+                        </div>
+
+                        <div class="border"></div>
+                        <div id="entry" class="">
+                        </div>
+                        <div class="border"></div>
+
+                        <div class="grid grid-cols-3 place-items-center">
+                            <span>Total Price</span>
+                            <span></span>
+                            <div>
+                                <span>BDT</span>
+                                <span id="total-price"></span>
+                            </div>
+                        </div>
+
+                        <div class="copoun">
+
+                        </div>
+                        <div>
+                            <span></span><span></span>
+                        </div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./script.js"></script>
 </body>
 
 </html>
