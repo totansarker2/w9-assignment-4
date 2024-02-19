@@ -9,7 +9,6 @@ var custom = {
             'black-3': 'rgba(3, 7, 18, 0.6)',
             'black-4': 'rgba(3, 7, 18, 0.5)',
             'black-5': 'rgba(3, 7, 18, 0.4)',
-            'white': '#000000',
 
             'white-1': 'rgba(255, 255, 255, 1)',
             'white-2': 'rgba(255, 255, 255, 0.8)',
