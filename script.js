@@ -2,14 +2,18 @@ const allseats = document.getElementById('all-seat');
 const seatIndex = document.getElementById('seat-index');
 const rightSeats = document.getElementById('right-seats');
 const leftSeats = document.getElementById('left-seats');
-document.getElementById('copoun-input').disabled = true;
-document.getElementById('copoun-btn').disabled = true;
+document.getElementById('coupon-input').disabled = true;
+document.getElementById('coupon-btn').disabled = true;
 
+const coupon15 = 'NEW15';
+const coupon20 = 'Couple 20';
 const letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
 let count = 0;
 let letter_index = 0
 let totalPrice = 0;
 let ticket_counter = 1;
+let discountPrice = 0;
+let couponInputBox = "";
 
 
 while (letter_index < letters.length) {
@@ -68,28 +72,52 @@ function clk(seat, seatId, event) {
         container.appendChild(seat_class);
         container.appendChild(seat_price);
 
-        document.getElementById('entry').appendChild(container);
-        document.getElementById('total-price').innerText = totalPrice;
-        console.log("entry added");
-
         ticket_counter++;
         totalPrice += 550;
+
+        document.getElementById('entry').appendChild(container);
+        document.getElementById('total-price').innerText = totalPrice;
+        document.getElementById('grand-total').innerHTML = totalPrice;
     }
 
     else if (seat.classList.contains("bg-green-1")) {
         seat.classList.remove('bg-green-1');
         seat.classList.add("bg-gray-100")
 
-        document.getElementById('total-price').innerText = totalPrice;
-        document.getElementById('copoun-input').disabled = true;
-        document.getElementById('copoun-btn').disabled = true;
-        document.getElementById(`entry-${seatId}`).remove();
-
         ticket_counter--;
         totalPrice -= 550;
+        discountPrice = 0;
+
+        document.getElementById('total-price').innerText = totalPrice;
+        document.getElementById('grand-total').innerHTML = totalPrice;
+        document.getElementById('coupon-input').disabled = true;
+        document.getElementById('coupon-btn').disabled = true;
+        document.getElementById(`entry-${seatId}`).remove();
+
     }
-    if (ticket_counter > 4) {
-        document.getElementById('copoun-input').disabled = false;
-        document.getElementById('copoun-btn').disabled = false;
+    if (ticket_counter > 4 && discountPrice == 0) {
+        document.getElementById('coupon-input').disabled = false;
+        document.getElementById('coupon-btn').disabled = false;
+    }
+    console.log(ticket_counter)
+}
+
+const couponInput = document.getElementById('coupon-input');
+couponInput.addEventListener('keyup', (e) => {
+    couponInputBox = e.target.value
+});
+
+function discount() {
+    if (couponInputBox.toLowerCase() === coupon15.toLowerCase()) {
+        discountPrice = totalPrice * 0.15;
+        document.getElementById('grand-total').innerHTML = totalPrice - discountPrice;
+        document.getElementById('coupon-input').disabled = true;
+        document.getElementById('coupon-btn').disabled = true;
+    }
+    else if (couponInputBox.toLowerCase() === coupon20.toLowerCase()) {
+        discountPrice = totalPrice * 0.20;
+        document.getElementById('grand-total').innerHTML = totalPrice - discountPrice;
+        document.getElementById('coupon-input').disabled = true;
+        document.getElementById('coupon-btn').disabled = true;
     }
 }
