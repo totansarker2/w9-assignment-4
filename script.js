@@ -115,8 +115,11 @@ function clk(seat, seatId, event) {
     else {
         document.getElementById('next-btn').disabled = true;
     }
-    document.getElementById('coupon-input').value = "";
-    coupon_alert.innerText = "";
+    if (ticket_counter < 5) {
+        document.getElementById('coupon-input').value = "";
+        coupon_alert.innerText = "";
+    }
+
 }
 
 const couponInput = document.getElementById('coupon-input');
