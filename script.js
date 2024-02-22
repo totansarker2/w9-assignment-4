@@ -55,8 +55,8 @@ while (letter_index < letters.length) {
 
 function clk(seat, seatId, event) {
     if (seat.classList.contains("bg-gray-100") && ticket_counter <= 4) {
-        seat.classList.remove("bg-gray-100")
-        seat.classList.add('bg-green-1');
+        seat.classList.remove("bg-gray-100", 'text-black-1')
+        seat.classList.add('bg-green-1', 'text-white');
 
         let container = document.createElement('div');
         container.classList.add('flex', 'justify-between');
@@ -86,8 +86,8 @@ function clk(seat, seatId, event) {
     }
 
     else if (seat.classList.contains("bg-green-1")) {
-        seat.classList.remove('bg-green-1');
-        seat.classList.add("bg-gray-100")
+        seat.classList.remove('bg-green-1', 'text-white');
+        seat.classList.add("bg-gray-100", 'text-black-1')
 
         ticket_counter--;
         totalPrice -= 550;
