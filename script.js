@@ -2,6 +2,7 @@ const allseats = document.getElementById('all-seat');
 const seatIndex = document.getElementById('seat-index');
 const rightSeats = document.getElementById('right-seats');
 const leftSeats = document.getElementById('left-seats');
+const coupon_alert = document.getElementById('coupon_alart');
 document.getElementById('coupon-input').disabled = true;
 document.getElementById('coupon-btn').disabled = true;
 document.getElementById('next-btn').disabled = true;
@@ -114,6 +115,8 @@ function clk(seat, seatId, event) {
     else {
         document.getElementById('next-btn').disabled = true;
     }
+    document.getElementById('coupon-input').value = "";
+    coupon_alert.innerText = "";
 }
 
 const couponInput = document.getElementById('coupon-input');
@@ -146,21 +149,35 @@ function discount() {
         document.getElementById('grand-total').innerHTML = totalPrice - discountPrice;
         document.getElementById('coupon-input').disabled = true;
         document.getElementById('coupon-btn').disabled = true;
+
+        coupon_alert.innerHTML = "Congratulations! You got 15% discount";
+        coupon_alert.classList.remove('text-red-600');
+        coupon_alert.classList.add('text-green-1');
     }
     else if (couponInputBox.toLowerCase() === coupon20.toLowerCase()) {
         discountPrice = totalPrice * 0.20;
         document.getElementById('grand-total').innerHTML = totalPrice - discountPrice;
         document.getElementById('coupon-input').disabled = true;
         document.getElementById('coupon-btn').disabled = true;
+
+        coupon_alert.innerHTML = "Congratulations! You got 20% discount";
+        coupon_alert.classList.remove('text-red-600');
+        coupon_alert.classList.add('text-green-1');
+    }
+    else {
+        coupon_alert.innerHTML = "Your Coupon is invalid!";
+        coupon_alert.classList.remove('text-green-1');
+        coupon_alert.classList.add('text-red-600');
+        document.getElementById('coupon-input').value = "";
     }
 }
 
-function modelBtn(){
+function modelBtn() {
     // document.getElementById('my-modal').style.display = 'none';
     window.location.reload();
 }
 
-function showModal(){
+function showModal() {
     document.getElementById('my-modal').style.display = 'block';
     console.log("model showed");
 }
