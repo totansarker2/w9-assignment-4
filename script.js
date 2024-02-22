@@ -4,6 +4,7 @@ const rightSeats = document.getElementById('right-seats');
 const leftSeats = document.getElementById('left-seats');
 document.getElementById('coupon-input').disabled = true;
 document.getElementById('coupon-btn').disabled = true;
+document.getElementById('next-btn').disabled = true;
 
 const coupon15 = 'NEW15';
 const coupon20 = 'Couple 20';
@@ -15,6 +16,7 @@ let ticket_counter = 1;
 let discountPrice = 0;
 let couponInputBox = "";
 let totalSeats = 40;
+let phone_number = "";
 
 
 while (letter_index < letters.length) {
@@ -76,7 +78,7 @@ function clk(seat, seatId, event) {
 
         ticket_counter++;
         totalPrice += 550;
-        totalSeats-=1;
+        totalSeats -= 1;
 
         document.getElementById('entry').appendChild(container);
         document.getElementById('total-price').innerText = totalPrice;
@@ -92,7 +94,7 @@ function clk(seat, seatId, event) {
         ticket_counter--;
         totalPrice -= 550;
         discountPrice = 0;
-        totalSeats+=1;
+        totalSeats += 1;
 
         document.getElementById('total-price').innerText = totalPrice;
         document.getElementById('grand-total').innerHTML = totalPrice;
@@ -101,20 +103,41 @@ function clk(seat, seatId, event) {
         document.getElementById(`entry-${seatId}`).remove();
         document.getElementById('seat-no').innerText = ticket_counter - 1;
         document.getElementById('seat-left').innerText = totalSeats;
-
     }
     if (ticket_counter > 4 && discountPrice == 0) {
         document.getElementById('coupon-input').disabled = false;
         document.getElementById('coupon-btn').disabled = false;
     }
-    // if(ticket_counter>1){
-
-    // }
+    if (ticket_counter > 1 && phone_number.length == 11) {
+        document.getElementById('next-btn').disabled = false;
+    }
+    else {
+        document.getElementById('next-btn').disabled = true;
+    }
 }
 
 const couponInput = document.getElementById('coupon-input');
 couponInput.addEventListener('keyup', (e) => {
     couponInputBox = e.target.value
+});
+
+const phoneInput = document.getElementById('phone-input');
+phoneInput.addEventListener('keyup', (e) => {
+    let target_num = e.target.value;
+    if (target_num.length == 11 && ticket_counter > 1) {
+        if (!isNaN(target_num)) {
+            document.getElementById('next-btn').disabled = false;
+            phone_number = target_num;
+        }
+        else {
+            console.log("Please provide a valid 11-digit phone number");
+            document.getElementById('next-btn').disabled = true;
+        }
+    }
+    else {
+        document.getElementById('next-btn').disabled = true;
+        phone_number = target_num;
+    }
 });
 
 function discount() {

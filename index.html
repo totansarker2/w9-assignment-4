@@ -221,7 +221,7 @@
             <div class="w-full bg-white flex justify-between">
                 <div class="select-seat w-[55%] font-inter flex flex-col gap-6 p-12">
                     <h4 class="font-raleway text-2xl font-semibold">Select Your Seat </h4>
-                    <div class="border-b-2 border-dashed"></div>
+                    <div class="border-b-2 border-dashed border-[#03071233]"></div>
                     <div class="w-full flex justify-between">
                         <div class="flex h-fit">
                             <img src="./images/seat-gray.png" alt="">
@@ -232,7 +232,7 @@
                             <span>Selected</span>
                         </div>
                     </div>
-                    <div class="border-b-2 border-dashed"></div>
+                    <div class="border-b-2 border-dashed border-[#03071233]"></div>
                     <div id="all-seat" class="flex text-center w-full gap-[0%]">
                         <div id="seat-index" class="grid grid-cols-1 gap-6 flex-grow">
                             <div class="h-16">
@@ -253,7 +253,7 @@
                 <div class="border-l-2 border-dashed border-[#0307124D]"></div>
                 <div class="details flex flex-col flex-grow font-inter p-12 gap-6">
                     <h4 class="font-raleway text-2xl font-semibold">Select Your Seat </h4>
-                    <div class="border-b-2 border-dashed"></div>
+                    <div class="border-b-2 border-dashed border-[#03071233]"></div>
                     <div class="buy flex flex-col gap-8">
                         <div class="grid gap-4 bg-gray-1 p-12 rounded-2xl">
                             <div class="flex justify-between">
@@ -299,13 +299,13 @@
                                 name="uname" required>
 
                             <label for="phone"><b>Phone Number</b></label>
-                            <input type="phone" placeholder="Enter your phone number"
+                            <input id="phone-input" type="phone" placeholder="Enter your phone number"
                                 class="input input-bordered w-full h-16" name="phone" required>
 
                             <label for="email"><b>Email ID</b></label>
                             <input type="email" placeholder="Enter your email id"
                                 class="input input-bordered w-full h-16" name="email">
-                            <button type="submit"
+                            <button id="next-btn" type="submit"
                                 class="btn bg-green-1 h-16 hover:text-black-1 hover text-white">Next</button>
                         </form>
                         <div class="w-full flex justify-evenly">
