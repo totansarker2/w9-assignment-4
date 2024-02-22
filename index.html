@@ -60,6 +60,7 @@
         font-style: normal;
         display: grid;
         gap: 100px;
+        position: relative;
     }
 
     body>* {
@@ -296,17 +297,44 @@
                         <form action="" class="w-full flex flex-col gap-6">
                             <label for="uname"><b>Passenger Name</b></label>
                             <input type="text" placeholder="Enter your name" class="input input-bordered w-full h-16"
-                                name="uname" required>
+                                name="uname">
 
                             <label for="phone"><b>Phone Number</b></label>
-                            <input id="phone-input" type="phone" placeholder="Enter your phone number"
+                            <input id="phone-input" type="phone" placeholder="Enter your 11-digit valid phone number"
                                 class="input input-bordered w-full h-16" name="phone" required>
 
                             <label for="email"><b>Email ID</b></label>
                             <input type="email" placeholder="Enter your email id"
                                 class="input input-bordered w-full h-16" name="email">
                             <button id="next-btn" type="submit"
-                                class="btn bg-green-1 h-16 hover:text-black-1 hover text-white">Next</button>
+                                class="btn bg-green-1 h-16 hover:text-black-1 hover text-white"
+                                onclick="showModal()">Next</button>
+
+                            
+
+
+                            
+                            <div id="my-modal" class="font-inter text-[#4A4A4A] text-xl fixed top-[50%] rounded-2xl
+                                left-[50%] translate-x-[-50%] translate-y-[-50%]  bg-white hidden">
+                                <div class=" flex flex-col justify-center items-center text-center gap-4 p-8">
+                                    <button onclick="modelBtn()"
+                                        class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                                    <img src="./images/success.png" alt="">
+                                    <h2 class="text-green-1">SUCCESS</h2>
+                                    <p class="font-medium">
+                                        Thank you for Booking Our Bus Seats.
+                                        We are working hard to find the best service and deals for you.
+                                    </p>
+                                    <span class="font-light">
+                                        Shortly you will find a confirmation in your email.
+                                    </span>
+                                    <button onclick="modelBtn()"
+                                        class="btn bg-green-1 h-16 hover:text-black-1 hover text-white">Continue</button>
+                                </div>
+                            </div>
+
+
+                            
                         </form>
                         <div class="w-full flex justify-evenly">
                             <span class="underline underline-offset-4 cursor-pointer">Terms and Conditions</span>

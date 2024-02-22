@@ -154,3 +154,18 @@ function discount() {
         document.getElementById('coupon-btn').disabled = true;
     }
 }
+
+function modelBtn(){
+    // document.getElementById('my-modal').style.display = 'none';
+    window.location.reload();
+}
+
+function showModal(){
+    document.getElementById('my-modal').style.display = 'block';
+    console.log("model showed");
+}
+
+const form = document.querySelector('form');
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+});
