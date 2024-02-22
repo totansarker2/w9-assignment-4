@@ -173,13 +173,11 @@ function discount() {
 }
 
 function modelBtn() {
-    // document.getElementById('my-modal').style.display = 'none';
     window.location.reload();
 }
 
 function showModal() {
-    document.getElementById('my-modal').style.display = 'block';
-    console.log("model showed");
+    document.getElementById('my-modal').style.display = 'flex';
 }
 
 const form = document.querySelector('form');
