@@ -14,6 +14,7 @@ let totalPrice = 0;
 let ticket_counter = 1;
 let discountPrice = 0;
 let couponInputBox = "";
+let totalSeats = 40;
 
 
 while (letter_index < letters.length) {
@@ -45,7 +46,7 @@ while (letter_index < letters.length) {
         }
     }
     else {
-        span.classList.remove('col-span-2', 'bg-gray-100', 'rounded-xl', 'border-2', 'border-red-0', 'hover:border-green-1', 'cursor-pointer');
+        span.classList.remove('justify-center', 'col-span-2', 'bg-gray-100', 'rounded-xl', 'border-2', 'border-red-0', 'hover:border-green-1', 'cursor-pointer');
         span.innerHTML = `${letters[letter_index]}`;
         seatIndex.appendChild(span);
         count++;
@@ -58,7 +59,8 @@ function clk(seat, seatId, event) {
         seat.classList.add('bg-green-1');
 
         let container = document.createElement('div');
-        container.classList.add('grid', 'grid-cols-3', 'place-items-center');
+        container.classList.add('flex', 'justify-between');
+
         container.id = `entry-${seatId}`;
         let seat_no = document.createElement('span');
         let seat_class = document.createElement('span');
@@ -74,10 +76,13 @@ function clk(seat, seatId, event) {
 
         ticket_counter++;
         totalPrice += 550;
+        totalSeats-=1;
 
         document.getElementById('entry').appendChild(container);
         document.getElementById('total-price').innerText = totalPrice;
         document.getElementById('grand-total').innerHTML = totalPrice;
+        document.getElementById('seat-no').innerText = ticket_counter - 1;
+        document.getElementById('seat-left').innerText = totalSeats;
     }
 
     else if (seat.classList.contains("bg-green-1")) {
@@ -87,12 +92,15 @@ function clk(seat, seatId, event) {
         ticket_counter--;
         totalPrice -= 550;
         discountPrice = 0;
+        totalSeats+=1;
 
         document.getElementById('total-price').innerText = totalPrice;
         document.getElementById('grand-total').innerHTML = totalPrice;
         document.getElementById('coupon-input').disabled = true;
         document.getElementById('coupon-btn').disabled = true;
         document.getElementById(`entry-${seatId}`).remove();
+        document.getElementById('seat-no').innerText = ticket_counter - 1;
+        document.getElementById('seat-left').innerText = totalSeats;
 
     }
     if (ticket_counter > 4 && discountPrice == 0) {
