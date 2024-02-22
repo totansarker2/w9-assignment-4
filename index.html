@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="light" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -58,6 +58,8 @@
         font-family: "Raleway", sans-serif;
         font-optical-sizing: auto;
         font-style: normal;
+        display: grid;
+        gap: 100px;
     }
 
     body>* {
@@ -65,7 +67,6 @@
         margin: 0 auto;
         border-radius: 32px;
         overflow: hidden;
-
     }
 </style>
 
@@ -111,7 +112,7 @@
     </nav>
 
     <!-- banner section start -->
-    <section class="banner">
+    <section class="banner mt-[-100px]">
         <div class="hero h-[30rem]" style="background-image: url(./images/banner.png)">
             <div class="hero-overlay bg-opacity-20"></div>
             <div class="hero-content text-center text-neutral-content">
@@ -124,9 +125,9 @@
                         app.
                         The
                         integrated testing features allow for a streamlined .</p>
-                    <button
+                    <a href="#PH-Paribahan "
                         class="btn btn-primary font-bold text-xl bg-green-1 text-black border-none hover:bg-green-2">Buy
-                        Tickets</button>
+                        Tickets</a>
                 </div>
             </div>
         </div>
@@ -168,7 +169,7 @@
     </section>
 
     <!-- P.H Paribahan section start -->
-    <section class="w-full PH-Paribahan bg-gray-1">
+    <section id="PH-Paribahan" class="w-full bg-gray-1">
         <div class="w-[75%] mx-auto flex flex-col items-center gap-7">
             <h2 class="font-bold text-4.5xl">P.H Paribahan</h2>
             <p class="font-inter text-lg text-black-3 w-[80%] text-center">Yes, you can run unit tests and view the

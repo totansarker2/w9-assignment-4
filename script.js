@@ -107,7 +107,9 @@ function clk(seat, seatId, event) {
         document.getElementById('coupon-input').disabled = false;
         document.getElementById('coupon-btn').disabled = false;
     }
-    console.log(ticket_counter)
+    // if(ticket_counter>1){
+
+    // }
 }
 
 const couponInput = document.getElementById('coupon-input');
